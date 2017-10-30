@@ -1,0 +1,533 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F0E119F0-3EA2-4E70-8BFF-A3DF479D32D5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WorldEditor</RootNamespace>
+    <AssemblyName>WorldEditor</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="JavaIOHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\JavaIOHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.DirectX.DirectDraw, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AudioPlayer.cs" />
+    <Compile Include="Command.cs" />
+    <Compile Include="CommandType.cs" />
+    <Compile Include="CompareFunction.cs" />
+    <Compile Include="CustomPens.cs" />
+    <Compile Include="DrawMode.cs" />
+    <Compile Include="EditMode.cs" />
+    <Compile Include="CustomBrushes.cs" />
+    <Compile Include="DynamicTileSetData.cs" />
+    <Compile Include="DynamicTileData.cs" />
+    <Compile Include="EventRegion.cs" />
+    <Compile Include="EventVariable.cs" />
+    <Compile Include="Form收费.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form收费.Designer.cs">
+      <DependentUpon>Form收费.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form移动摄像机.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form移动摄像机.Designer.cs">
+      <DependentUpon>Form移动摄像机.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form元数据.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form元数据.Designer.cs">
+      <DependentUpon>Form元数据.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form创建游戏单位.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form创建游戏单位.Designer.cs">
+      <DependentUpon>Form创建游戏单位.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form删除游戏单位.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form删除游戏单位.Designer.cs">
+      <DependentUpon>Form删除游戏单位.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form区域名称修改.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form区域名称修改.Designer.cs">
+      <DependentUpon>Form区域名称修改.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form变量与值比较.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form变量与值比较.Designer.cs">
+      <DependentUpon>Form变量与值比较.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form变量与变量比较.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form变量与变量比较.Designer.cs">
+      <DependentUpon>Form变量与变量比较.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form变量自减.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form变量自减.Designer.cs">
+      <DependentUpon>Form变量自减.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form变量自加.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form变量自加.Designer.cs">
+      <DependentUpon>Form变量自加.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form命令添加.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form命令添加.Designer.cs">
+      <DependentUpon>Form命令添加.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form地图.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form地图.Designer.cs">
+      <DependentUpon>Form地图.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form播放MIDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form播放MIDI.Designer.cs">
+      <DependentUpon>Form播放MIDI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form播放WAV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form播放WAV.Designer.cs">
+      <DependentUpon>Form播放WAV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form播放角色动画.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form播放角色动画.Designer.cs">
+      <DependentUpon>Form播放角色动画.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form新建地图.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form新建地图.Designer.cs">
+      <DependentUpon>Form新建地图.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form新建层.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form新建层.Designer.cs">
+      <DependentUpon>Form新建层.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form显示可视层.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form显示可视层.Designer.cs">
+      <DependentUpon>Form显示可视层.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form显示文章.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form显示文章.Designer.cs">
+      <DependentUpon>Form显示文章.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form杀死游戏单位.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form杀死游戏单位.Designer.cs">
+      <DependentUpon>Form杀死游戏单位.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form游戏单位比较.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form游戏单位比较.Designer.cs">
+      <DependentUpon>Form游戏单位比较.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form等待.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form等待.Designer.cs">
+      <DependentUpon>Form等待.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form触发区域比较.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form触发区域比较.Designer.cs">
+      <DependentUpon>Form触发区域比较.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form触发器添加.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form触发器添加.Designer.cs">
+      <DependentUpon>Form触发器添加.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form触发条件添加.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form触发条件添加.Designer.cs">
+      <DependentUpon>Form触发条件添加.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form设置主角坐标.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form设置主角坐标.Designer.cs">
+      <DependentUpon>Form设置主角坐标.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form设置单位绘制层.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form设置单位绘制层.Designer.cs">
+      <DependentUpon>Form设置单位绘制层.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form设置变量.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form设置变量.Designer.cs">
+      <DependentUpon>Form设置变量.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form设置地图.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form设置地图.Designer.cs">
+      <DependentUpon>Form设置地图.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form设置层.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form设置层.Designer.cs">
+      <DependentUpon>Form设置层.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form设置摄像机位置.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form设置摄像机位置.Designer.cs">
+      <DependentUpon>Form设置摄像机位置.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form设置触发器开关.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form设置触发器开关.Designer.cs">
+      <DependentUpon>Form设置触发器开关.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form读取关卡.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form读取关卡.Designer.cs">
+      <DependentUpon>Form读取关卡.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form逻辑值.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form逻辑值.Designer.cs">
+      <DependentUpon>Form逻辑值.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form配置触发器.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form配置触发器.Designer.cs">
+      <DependentUpon>Form配置触发器.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form隐藏可视层.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form隐藏可视层.Designer.cs">
+      <DependentUpon>Form隐藏可视层.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form震动.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form震动.Designer.cs">
+      <DependentUpon>Form震动.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form预读资源.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form预读资源.Designer.cs">
+      <DependentUpon>Form预读资源.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameEvent.cs" />
+    <Compile Include="GameEventAction.cs" />
+    <Compile Include="GameEventCondition.cs" />
+    <Compile Include="GameEventConditionType.cs" />
+    <Compile Include="GameEventType.cs" />
+    <Compile Include="GameUnit.cs" />
+    <Compile Include="GameUnitType.cs" />
+    <Compile Include="LogicLayerData.cs" />
+    <Compile Include="Trigger.cs" />
+    <Compile Include="VisualLayerData.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapData.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form收费.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form收费.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form移动摄像机.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form移动摄像机.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form元数据.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form元数据.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form创建游戏单位.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form创建游戏单位.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form删除游戏单位.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form删除游戏单位.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form区域名称修改.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form区域名称修改.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form变量与值比较.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form变量与值比较.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form变量与变量比较.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form变量与变量比较.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form变量自减.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form变量自减.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form变量自加.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form变量自加.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form命令添加.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form命令添加.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form地图.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form地图.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form播放MIDI.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form播放MIDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form播放WAV.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form播放WAV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form播放角色动画.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form播放角色动画.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form新建地图.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form新建地图.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form新建层.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form新建层.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form显示可视层.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form显示可视层.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form显示文章.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form显示文章.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form杀死游戏单位.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form杀死游戏单位.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form游戏单位比较.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form游戏单位比较.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form等待.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form等待.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form触发区域比较.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form触发区域比较.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form触发器添加.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form触发器添加.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form触发条件添加.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form触发条件添加.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form设置主角坐标.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form设置主角坐标.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form设置单位绘制层.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form设置单位绘制层.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form设置变量.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form设置变量.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form设置地图.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form设置地图.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form设置层.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form设置层.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form设置摄像机位置.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form设置摄像机位置.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form设置触发器开关.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form设置触发器开关.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form读取关卡.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form读取关卡.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form逻辑值.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form逻辑值.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form配置触发器.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form配置触发器.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form隐藏可视层.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form隐藏可视层.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form震动.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form震动.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form预读资源.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form预读资源.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="RegionEditMode.cs" />
+    <Compile Include="StaticTileSetData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\AddNew.png" />
+    <Content Include="Resources\BackgroundTransparent.bmp" />
+    <None Include="Resources\Copy.png" />
+    <None Include="Resources\Bucket.png" />
+    <None Include="Resources\ColorDialog.png" />
+    <None Include="Resources\Brush.png" />
+    <None Include="Resources\ColorFont.png" />
+    <Content Include="Resources\CopyFrame.png" />
+    <None Include="Resources\Database.png" />
+    <Content Include="Resources\Delete.png" />
+    <None Include="Resources\FirstLayer.png" />
+    <None Include="Resources\GameEvent.png" />
+    <None Include="Resources\Dynamic.png" />
+    <Content Include="Resources\GoDown.png" />
+    <Content Include="Resources\GoLeft.png" />
+    <Content Include="Resources\GoRight.png" />
+    <Content Include="Resources\GoUp.png" />
+    <None Include="Resources\HorizontalFlip.png" />
+    <Content Include="Resources\InsertFrame.png" />
+    <None Include="Resources\LayerMoveUp.png" />
+    <None Include="Resources\LayerMoveDown.png" />
+    <None Include="Resources\LogicLayer.png" />
+    <None Include="Resources\Lightning.png" />
+    <Content Include="Resources\MoveFirst.png" />
+    <Content Include="Resources\MoveLast.png" />
+    <Content Include="Resources\MoveNext.png" />
+    <None Include="Resources\Parse.png" />
+    <Content Include="Resources\Pause.png" />
+    <None Include="Resources\Pen.png" />
+    <None Include="Resources\Property.png" />
+    <None Include="Resources\Region.png" />
+    <Content Include="Resources\ScaleFour.png" />
+    <Content Include="Resources\ScaleHalf.png" />
+    <Content Include="Resources\ScaleOne.png" />
+    <Content Include="Resources\ScaleTwo.png" />
+    <None Include="Resources\ScreenGrid.png" />
+    <None Include="Resources\VerticalFlip.png" />
+    <None Include="Resources\ThirdLayer.png" />
+    <None Include="Resources\SecondLayer.png" />
+    <None Include="Resources\SelectBox.png" />
+    <None Include="Resources\Stop.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
