@@ -1,2 +1,2 @@
 # Game_World_Editor
-A 2D game map editor
+A winform 2D game map editor
